@@ -1,0 +1,55 @@
+<p>fruta works!</p>
+<h1>{{titulo}}</h1>
+    <strong>Fruta estrella:</strong>
+    <ul>
+        <li>{{fruta.estado}}</li>
+        <li>{{frutas[0].nombre}}</li>
+    </ul>
+<hr>
+
+<h3>Listado de frutas</h3>
+<ul>
+    <li *ngFor ="let fruta of frutas ; let i = index" >
+        <Strong>Frutas: {{i+1}}</Strong>
+        <ul>
+            <li>{{fruta.nombre}}</li>
+            <li>{{fruta.edad}}</li>
+            <li>{{fruta.tipo}}</li>
+            <li *ngIf ="fruta.estado == true"> Está en buen estado</li>
+            <li *ngIf ="fruta.estado == false"> No está en buen estado</li>
+        </ul>
+    </li>
+</ul>
+<hr>
+
+<h3>Colores swith</h3>
+<ul [ngSwitch] = "color">
+    <li *ngSwitchCase = "'red'" [ngStyle] = "{'background' : color, 'color' : 'green'}" >Es de color rojo</li>
+</ul>
+
+<br>
+<hr>
+
+<h3>Selector de Color</h3>
+<button (click) = "logColorSeleccionado()">MOSTRAR LOG</button>
+<input type="text" [(ngModel)] = "color_seleccionado"/>
+<!--ngStyle en atributo-->
+<!-- [class.fondoAzul] = " color_seleccionado == 'blue'" -->
+<!-- [ngClass] = ['1','2',...] -->
+<pre [style.border] = "color_seleccionado == 'red' ? '5px solid black' : '1px solid green'" 
+     [ngClass] = "{
+         fondoAzul : color_seleccionado == 'blue',
+         fondoVerde : color_seleccionado == 'green'
+     }">  
+    <strong>Color elegido:</strong>
+    {{color_seleccionado}}
+</pre>
+
+<div [ngStyle] = "{
+        'background': color_seleccionado,
+        'width': '200px',
+        'height': '200px',
+        'margin-right': '50%',
+        'float':'right'
+    }"></div>
+    <div style="clear:both"></div>
