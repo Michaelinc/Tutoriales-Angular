@@ -1,0 +1,36 @@
+
+<h1>Formulario Reactivo</h1>
+
+<style>
+form{
+width: 200px;
+}
+input[type = "text"]{
+    display: block;
+    width: 100%;
+}
+div{
+    float: left;
+}
+.Listado{
+    margin-left: 30px;
+
+}
+</style>
+<form [formGroup] = "singupForm" (ngSubmit) = "enviar(singupForm.value)">
+    
+    <label>Nombre:</label>
+    <input formControlName = "nombre" type="text" >
+    <br>
+    <label >Usuario</label>
+    <input formControlName = "usuario" type="text">
+    <br>
+    <label >Email:</label>
+    <input formControlName = "email" type="email">
+    <br>
+    <label >Clave</label>
+    <input formControlName = "clave" type="password">
+    <br>
+    <button [disabled] = "singupForm.invalid" type="submit">Registrarse</button>
+
+</form>

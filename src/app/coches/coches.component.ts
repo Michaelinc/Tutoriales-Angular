@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Coche } from './coches';
 import { PeticionesService } from '../service/peticiones.service';
+import { FormGroup, FormBuilder,Validators } from "@angular/forms/"
 
 @Component({
   selector: 'coches',
   templateUrl: './coches.component.html',
   styleUrls: ['./coches.component.css']
 })
-export class CochesComponent implements OnInit {
+export class CochesComponent {
 
   public coche : Coche;
   public coches : Array<Coche>;
@@ -36,5 +37,6 @@ export class CochesComponent implements OnInit {
     this.coches.push(this.coche);
     this.coche =  new Coche("","","");
   }
+
 
 }

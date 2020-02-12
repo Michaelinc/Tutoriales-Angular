@@ -12,7 +12,8 @@ import { ConversorPipe } from './pipes/conversor.pipe';
 import { CochesComponent } from './coches/coches.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlantillasComponent } from './plantillas/plantillas.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { FormReactiveComponent } from './form-reactive/form-reactive.component'
 
 
 
@@ -25,14 +26,16 @@ import { PlantillasComponent } from './plantillas/plantillas.component';
     ContactoComponent,
     ConversorPipe,
     CochesComponent,
-    PlantillasComponent
+    PlantillasComponent,
+    FormReactiveComponent
 
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

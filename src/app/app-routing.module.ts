@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component'
 import { CochesComponent } from './coches/coches.component';
 import { PlantillasComponent } from './plantillas/plantillas.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 
 const appRoutes : Routes = [
@@ -16,6 +17,7 @@ const appRoutes : Routes = [
   {path : 'frutas' , component : FrutaComponent},
   {path : 'empleados', component : EmpleadoComponent},
   {path : 'coches', component : CochesComponent},
+  {path : 'formuarioReactivo', component : FormReactiveComponent},
   {path : 'plantillas', component : PlantillasComponent},
   {path : 'pagina-principal', component : HomeComponent},
   {path : 'contactos', component : ContactoComponent},
